@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.title }}</title>
+</head>
+<body>
+    <h1>{{ form.title }}</h1>
+    <p>{{ form.description }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Name</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Response</label><br>
+        <textarea name="response" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

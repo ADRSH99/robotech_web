@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Response</title>
+</head>
+<body>
+    <h1>Edit Response #{{ response.id }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Answers (JSON)</label><br>
+        <textarea name="answers" rows="10" cols="60">
+{{ response.answers }}
+        </textarea><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

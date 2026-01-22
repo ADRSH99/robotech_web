@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responses</title>
+</head>
+<body>
+    <h1>Responses for "{{ form.title }}"</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Answers</th>
+            <th>Submitted At</th>
+            {% if request.user.role in 'WEB CONV' %}
+                <th>Edit</th>
+            {% endif %}
+        </tr>
+
+        {% for r in responses %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>
+                <pre>{{ r.answers }}</pre>
+            </td>
+            <td>{{ r.submitted_at }}</td>
+            {% if request.user.role in 'WEB CONV' %}
+                <td>
+                    <a href="/responses/edit/{{ r.id }}/">Edit</a>
+                </td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No responses yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

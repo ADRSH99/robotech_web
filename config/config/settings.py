@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'accounts',
     'forms_app',
     'responses',
-    'django_extensions'
+    'django_extensions',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
